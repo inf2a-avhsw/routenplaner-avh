@@ -1,4 +1,4 @@
-package Routenplaner;
+﻿package Routenplaner;
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -17,7 +17,7 @@ import javax.swing.JPanel;
 import javax.swing.ImageIcon;
 /**
  *
- * @author funkepa
+ * @author jbarthelmes
  */
 public class VIEW extends javax.swing.JFrame {
 
