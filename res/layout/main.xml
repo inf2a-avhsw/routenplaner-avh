@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/textStart"
+                android:textAppearance="?android:attr/textAppearanceMedium" android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/textZiel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/textZiel"
+                android:textAppearance="?android:attr/textAppearanceMedium" android:layout_weight="1"/>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Spinner
+                android:id="@+id/spinStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_weight="1"/>
+
+            <Spinner
+                android:id="@+id/spinZiel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_weight="1"/>
+
+        </TableRow>
+
+        
+		<TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+                <Button
+                    android:id="@+id/btnRouteBerechnen"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/RouteBerechnen" />
+        </TableRow>        
+
+    </TableLayout>  
