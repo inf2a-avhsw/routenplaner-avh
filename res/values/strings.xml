@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, MainActivity!</string>
+    <string name="app_name">Routenplaner</string>
+    <string name="textZiel"> Ziel:</string>
+    <string name="textStart"> Start:</string>
+    <string name="RouteBerechnen">Route Berechnen!</string>
+    <string name="kein_start_zielwert">Bitte Start- und Zielwert eingeben!</string>
+
+</resources>
