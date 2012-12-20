@@ -13,12 +13,19 @@ public class DATENBANK {
 
 		
 		SQLiteDatabase myDatabase;
-		AssetDatabaseOpenHelper helper;
+		DataBaseHelper helper;
 		
 		public DATENBANK(Context context){
-			//TODO mit Hilfe von AssetDatabaseOpenHelper Datenbank von Assets in Systemspeicher kopieren
-			helper = new AssetDatabaseOpenHelper(context);
-			myDatabase = helper.openDatabase();
+			helper = new DataBaseHelper(context);
+			try {
+				helper.createDataBase();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			helper.openDataBase();
+			myDatabase = helper.getDatabase();
+		
 		}
 
 		public DBKANTE[] getDBKanten(){
