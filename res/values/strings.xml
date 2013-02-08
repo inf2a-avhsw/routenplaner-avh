@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="hello">Hello World, MainActivity!</string>
     <string name="app_name">Routenplaner</string>
     <string name="textZiel"> Ziel:</string>
-    <string name="textStart"> Start:</string>
-    <string name="RouteBerechnen">Route Berechnen!</string>
     <string name="kein_start_zielwert">Bitte Start- und Zielwert eingeben!</string>
+    <string name="dialogGPS">Diese Anwendung benötigt GPS. GPS aktivieren?</string>
+    <string name="dialogGPSPositiveButton">OK</string>
+    <string name="dialogGPSNegativeButton">Abbrechen</string>
+    <string name="btnNavigationStarten">Navigation Starten!</string>
+    <string name="zielErreicht">Ziel erreicht!</string>
 
 </resources>
