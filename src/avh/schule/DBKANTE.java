@@ -2,16 +2,16 @@ package avh.schule;
 
 public class DBKANTE
 {
-    int knoten_ID;
+    int kanten_ID;
     int knoten1;
     int knoten2;
     int laenge;
     
-    public DBKANTE(int knoten_ID, int knoten1, int knoten2, int laenge){
-        this.knoten_ID = knoten_ID;
+    public DBKANTE(int kanten_ID, int knoten1, int knoten2, double laenge){
+        this.kanten_ID = kanten_ID;
         this.knoten1 = knoten1;
         this.knoten2 = knoten2;
-        this.laenge = laenge;
+        this.laenge = (int) (laenge*1000);
     }
     
     public int getLaenge() {

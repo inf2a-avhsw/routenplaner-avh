@@ -15,7 +15,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
     //The Android's default system path of your application database.
     private static String DB_PATH = "/data/data/avh.schule/databases/";
  
-    private static String DB_NAME = "routen.sqlite";
+    private static String DB_NAME = "schweinfurt.sqlite";
  
     private SQLiteDatabase myDataBase; 
  
@@ -121,7 +121,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
  
     	//Open the database
         String myPath = DB_PATH + DB_NAME;
-    	myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
+    	myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READWRITE);
  
     }
  

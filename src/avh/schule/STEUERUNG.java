@@ -5,15 +5,18 @@ import java.util.Vector;
 public class STEUERUNG
 {
 
-MainActivity sicht;
-GRAPH graph;
-Vector<String> knotennamenliste;
+private MainActivity sicht;
+private GRAPH graph;
+private Vector<String> knotennamenliste;
+private DBKNOTEN[] dbknoten;
+private DBKANTE[] dbkanten;
+
 
 public STEUERUNG(MainActivity sicht) {
     // GRAPH INITIALISIEREN
     DATENBANK db = new DATENBANK(sicht.getApplicationContext()); // stellt dbknoten[]/dbkanten[] bereit, muss ausgelesen werden
-    DBKNOTEN[] dbknoten = db.getDBKnoten();
-    DBKANTE[] dbkanten = db.getDBKanten();
+    dbknoten = db.getDBKnoten();
+    dbkanten = db.getDBKanten();
     db.datenbankSchliessen();
     KNOTEN[] k = new KNOTEN[dbknoten.length];
     for (int i = 0; i < dbknoten.length; i++) {
@@ -39,21 +42,23 @@ public STEUERUNG(MainActivity sicht) {
 
 }
 
-public void routeBerechnen(String Apunkt, String Epunkt) { // Die Namen von Start- und Endknoten, aufgerufen durch VIEW
-    
-    Vector<String> knotennamenlist= new Vector<String>();
+public Vector<KNOTEN> routeBerechnen(String Apunkt, String Epunkt) { // Die Namen von Start- und Endknoten, aufgerufen durch VIEW
     KNOTEN anfang = graph.gibKnotenMitNamen(Apunkt);
     KNOTEN ende = graph.gibKnotenMitNamen(Epunkt);
-    Vector<KNOTEN> weg = graph.dijkstra(anfang, ende);
-    for (KNOTEN k : weg) {
-        knotennamenlist.add(k.gibName());
-    }
-    
-    sicht.routeAusgeben(knotennamenlist, ende.gibDistanz());
+    Vector<KNOTEN> weg = graph.dijkstra(anfang, ende); 
+	return weg;
 }
 
 public void initialisiere() {
     sicht.initialisieren(knotennamenliste, this);
 
+}
+
+public DBKNOTEN[] gibDBKNOTEN(){
+	return dbknoten;
+}
+
+public DBKANTE[] gibDBKANTEN(){
+	return dbkanten;
 }
 }
