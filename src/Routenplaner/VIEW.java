@@ -1,4 +1,4 @@
-﻿package Routenplaner;
+package Routenplaner;
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -10,10 +10,7 @@
  * Created on 10.05.2012, 07:45:08
  */
 
-import java.util.List;
-import java.util.ArrayList;
 import java.util.Vector;
-import javax.swing.JPanel;
 import javax.swing.ImageIcon;
 /**
  *
@@ -267,7 +264,7 @@ public class VIEW extends javax.swing.JFrame {
             karte.setIcon(new ImageIcon(this.getClass().getResource("/Routenplaner/42.jpg")));
         }
         
-        Vector<String> vector = new Vector<String>();
+        Vector<String> vector;
         Vector<String> nvector = new Vector<String>();
         vector=knotenliste;
         for(int i=0;i<vector.size();i++){
@@ -279,7 +276,7 @@ public class VIEW extends javax.swing.JFrame {
     }//GEN-LAST:event_startRelease
 
     private void zielRelease(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_zielRelease
-        Vector<String> vector = new Vector<String>();
+        Vector<String> vector;
         Vector<String> nvector = new Vector<String>();
         vector=knotenliste;
         for(int i=0;i<vector.size();i++){

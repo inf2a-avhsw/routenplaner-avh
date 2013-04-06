@@ -1,7 +1,7 @@
 package Routenplaner;
 
 import java.util.ArrayList;
-import com.mysql.jdbc.Driver;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -12,21 +12,19 @@ public class DATENBANK{
     
     Connection connection;
     Statement statement;
-    public DATENBANK(/*String url, String benutzer, String passwort*/){
-        String url = "jdbc:mysql://10.16.100.51/schule";
-        String benutzer = "q11";
-        String passwort = "q11";
+    public DATENBANK(){
+        String url = "jdbc:sqlite:schweinfurt.sqlite";
         
         //Laden des Datenbanktreibers    
         try{
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("org.sqlite.JDBC");
         }catch(ClassNotFoundException e){
             e.printStackTrace();
         }
     
         //Aufbauen der Datenbankverbindung
         try{
-            connection = DriverManager.getConnection(url, benutzer, passwort);
+            connection = DriverManager.getConnection(url);
         }catch(SQLException e){
             e.printStackTrace();
         }  
@@ -41,7 +39,8 @@ public class DATENBANK{
 
 
 
-public DBKANTE[] getDBKanten (){
+    @SuppressWarnings({"null", "ConstantConditions"})
+    public DBKANTE[] getDBKanten (){
 
 //Auslesen der Daten aus der Datenbank und Speichern in ein ResultSet
 ResultSet kantenRS = null; 
@@ -81,7 +80,8 @@ return kanten;
 
 
 
-public DBKNOTEN[] getDBKnoten(){
+    @SuppressWarnings({"null", "ConstantConditions"})
+    public DBKNOTEN[] getDBKnoten(){
 //Auslesen der Daten aus der Datenbank und Speichern in ein ResultSet
 ResultSet knotenRS = null; 
 try{
